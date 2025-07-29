@@ -1,0 +1,106 @@
+/* Main container for the page */
+.output-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style for the image container */
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  /* Style for the image */
+  .latest-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+  }
+  
+  /* Button styling */
+  .button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Hide button specific style */
+  .hide-button {
+    background-color: #f44336;
+  }
+  
+  .hide-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Text style when waiting for the image */
+  .waiting-text {
+    font-size: 18px;
+    color: #555;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Emergency button container style */
+  .emergency-button,
+  .door-button-container {
+    margin: 10px;
+  }
+  
+  /* Text when no emergency number is provided */
+  .no-emergency-text {
+    font-size: 16px;
+    color: #000000;
+  }
+  
+  /* Home button styling */
+  .home-button {
+    background-color: #2196F3;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .home-button:hover {
+    background-color: #1976D2;
+  }
+  
+  /* Media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .output-page-container {
+      padding: 10px;
+    }
+  
+    .latest-image {
+      max-width: 90%;
+    }
+  
+    .button,
+    .home-button,
+    .hide-button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  

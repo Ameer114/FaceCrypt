@@ -1,0 +1,199 @@
+/* Reset and base setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1648213754856-b04eca726307?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Darken the background image */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity to make it darker */
+  z-index: -1;
+}
+
+/* Background floating matrix effect */
+.bg-animation {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(0,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -2;
+  animation: floatBG 30s linear infinite;
+  opacity: 0.15;
+}
+
+@keyframes floatBG {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* Container Centering */
+.container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  width: 95%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  z-index: 1;
+}
+
+/* Dark cyber overlay */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+/* Heading Styling */
+.heading {
+  font-size: 3.5rem;
+  margin-bottom: 50px;
+  color: #00f0ff;
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
+  font-weight: 700;
+}
+
+/* Grid for Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card Component */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+  margin-right: 20px;
+  color: white;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.4));
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient backgrounds */
+.blue {
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+}
+
+.green {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.purple {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+
+.pink {
+  background: linear-gradient(135deg, #ff0844, #ffb199);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust Heading Font Size */
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  /* Adjust Card padding */
+  .card {
+    padding: 15px 20px;
+  }
+
+  /* Stack the grid items in one column */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Adjust the icon size */
+  .icon {
+    font-size: 30px;
+    margin-right: 15px;
+  }
+
+  /* Adjust title font size */
+  .title {
+    font-size: 1.2rem;
+  }
+
+  /* Reduce padding in container */
+  .container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust Heading Font Size for very small screens */
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  /* Further reduce card padding */
+  .card {
+    padding: 12px 15px;
+  }
+
+  /* Further adjust the icon size */
+  .icon {
+    font-size: 28px;
+  }
+
+  /* Further adjust title font size */
+  .title {
+    font-size: 1rem;
+  }
+}
